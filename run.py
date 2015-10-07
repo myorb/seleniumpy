@@ -6,6 +6,7 @@ import os
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+BASE_DIR = os.path.abspath('.') 
 
 class Chrome():
     def __init__(self,url):
@@ -34,10 +35,10 @@ class Chrome():
     def start(self,url):
     	self.driver.load(url)
     	elem = driver.find_element_by_name("q")
-		elem.send_keys("pycon")
-		elem.send_keys(Keys.RETURN)
-	def stop(self):
-		self.driver.close
+	elem.send_keys("pycon")
+	elem.send_keys(Keys.RETURN)
+    def stop(self):
+	self.driver.close
 
 Chrome("http://www.python.org")
 
